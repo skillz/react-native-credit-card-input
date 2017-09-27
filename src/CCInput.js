@@ -93,6 +93,9 @@ export default class CCInput extends Component {
             returnKeyType={keyboardType === 'numbers-and-punctuation' ? "done" : "default"}
             autoCapitalise="words"
             autoCorrect={false}
+            accessible={this.props.accessible}
+            accessibilityLabel={this.props.accessibilityLabel}
+            accessibilityTraits={this.props.accessibilityTraits}
             style={[
               s.baseInputStyle,
               inputStyle,

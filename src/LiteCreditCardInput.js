@@ -144,15 +144,24 @@ export default class LiteCreditCardInput extends Component {
       <View style={s.container}>
         <CCInput {...this._inputProps("number")}
             containerStyle={[s.numberInput, creditNumberStyle]}
-            key={'leftSide'}/>
+            key={'leftSide'}
+            accessible={true}
+            accessibilityTraits={'button'}
+            accessibilityLabel={'lite_cc_number_text'}/>
         <TouchableOpacity onPress={onPressFunc}>
           <Image style={s.icon}
-                 source={{ uri: Icons[this._iconToShow()] }} />
+                 source={{ uri: Icons[this._iconToShow()] }}
+                 accessible={true}
+                 accessibilityTraits={'button'}
+                 accessibilityLabel={'lite_cc_image_button'}/>
         </TouchableOpacity>
         <View style={infoStyle}
               key={'rightSide'}>
           <TouchableOpacity onPress={this._focusNumber.bind(this)}
-                            style={s.last4}>
+                            style={s.last4}
+                            accessible={true}
+                            accessibilityTraits={'button'}
+                            accessibilityLabel={'lite_cc_last4_text'}>
             <View style={s.last4Input}>
               <TextInput style={[s.input, s.last4Text, inputStyle]}
                          value={last4Value}
@@ -160,11 +169,20 @@ export default class LiteCreditCardInput extends Component {
             </View>
           </TouchableOpacity>
           <CCInput {...this._inputProps("expiry")}
-              containerStyle={s.expiryInput} />
+              containerStyle={s.expiryInput}
+              accessible={true}
+              accessibilityTraits={'button'}
+              accessibilityLabel={'lite_cc_expiry_text'}/>
           <CCInput {...this._inputProps("cvc")}
-              containerStyle={s.cvcInput} />
+              containerStyle={s.cvcInput}
+              accessible={true}
+              accessibilityTraits={'button'}
+              accessibilityLabel={'lite_cc_cvc_text'}/>
           <CCInput {...this._inputProps("postalCode")}
-              containerStyle={s.zipInput} />
+              containerStyle={s.zipInput}
+              accessible={true}
+              accessibilityTraits={'button'}
+              accessibilityLabel={'lite_cc_postalcode_text'}/>
         </View>
       </View>
     );

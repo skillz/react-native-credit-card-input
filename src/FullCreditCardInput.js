@@ -158,19 +158,34 @@ export default class FullCreditCardInput extends Component {
             showsHorizontalScrollIndicator={false}
             style={s.form}>
           <CCInput {...this._inputProps("number")}
-              containerStyle={[s.inputContainer, inputContainerStyle, { width: CARD_NUMBER_INPUT_WIDTH }]} />
+              containerStyle={[s.inputContainer, inputContainerStyle, { width: CARD_NUMBER_INPUT_WIDTH }]}
+              accessible={true}
+              accessibilityTraits={'button'}
+              accessibilityLabel={'full_cc_number_text'} />
           <CCInput {...this._inputProps("expiry")}
-              containerStyle={[s.inputContainer, inputContainerStyle, { width: EXPIRY_INPUT_WIDTH }]} />
+              containerStyle={[s.inputContainer, inputContainerStyle, { width: EXPIRY_INPUT_WIDTH }]}
+              accessible={true}
+              accessibilityTraits={'button'}
+              accessibilityLabel={'full_cc_expiry_text'}/>
           { requiresCVC &&
             <CCInput {...this._inputProps("cvc")}
-                containerStyle={[s.inputContainer, inputContainerStyle, { width: CVC_INPUT_WIDTH }]} /> }
+                containerStyle={[s.inputContainer, inputContainerStyle, { width: CVC_INPUT_WIDTH }]}
+                accessible={true}
+                accessibilityTraits={'button'}
+                accessibilityLabel={'full_cc_cvc_text'}/> }
           { requiresName &&
             <CCInput {...this._inputProps("name")}
                 keyboardType="default"
-                containerStyle={[s.inputContainer, inputContainerStyle, { width: NAME_INPUT_WIDTH }]} /> }
+                containerStyle={[s.inputContainer, inputContainerStyle, { width: NAME_INPUT_WIDTH }]}
+                accessible={true}
+                accessibilityTraits={'button'}
+                accessibilityLabel={'full_cc_name_text'}/> }
           { requiresPostalCode &&
             <CCInput {...this._inputProps("postalCode")}
-                containerStyle={[s.inputContainer, inputContainerStyle, { width: POSTAL_CODE_INPUT_WIDTH }]} /> }
+                containerStyle={[s.inputContainer, inputContainerStyle, { width: POSTAL_CODE_INPUT_WIDTH }]}
+                accessible={true}
+                accessibilityTraits={'button'}
+                accessibilityLabel={'full_cc_postalcode_text'}/> }
         </ScrollView>
       </View>
     );

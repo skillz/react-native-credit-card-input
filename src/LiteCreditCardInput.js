@@ -92,6 +92,10 @@ export default class LiteCreditCardInput extends Component {
       onFocus, onChange, onBecomeEmpty, onBecomeValid,
     } = this.props;
 
+    const keyboardTypeForZipCode = "numbers-and-punctuation";
+    if (Platform.OS == 'android') {
+      keyboardTypeForZipCode = "email-address";
+    }
 
     return {
       inputStyle: [s.input, inputStyle],
@@ -103,7 +107,7 @@ export default class LiteCreditCardInput extends Component {
       placeholder: placeholders[field],
       value: values[field] ? values[field] : "",
       status: status[field],
-      keyboardType: field === "postalCode" ? "numbers-and-punctuation" : "numeric",
+      keyboardType: field === "postalCode" ? keyboardTypeForZipCode : "numeric",
       _handleSubmit: this._handleSubmit.bind(this),
       key: field,
       onFocus: onFocus,

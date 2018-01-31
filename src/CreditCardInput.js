@@ -1,10 +1,11 @@
-import React, { Component, PropTypes } from "react";
+import React, { Component } from "react";
 import CCFieldFormatter from "./CCFieldFormatter";
 import CCFieldValidator from "./CCFieldValidator";
 import compact from "lodash.compact";
 
 import FullCreditCardInput from "./FullCreditCardInput";
 import LiteCreditCardInput from "./LiteCreditCardInput";
+import PropTypes from 'prop-types';
 
 export const SharedProps = {
   focused: PropTypes.string,

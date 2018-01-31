@@ -1,4 +1,6 @@
 import React, { Component, PropTypes } from "react";
+import PropTypes from 'prop-types';
+
 import ReactNative, {
   NativeModules,
   View,
@@ -6,6 +8,7 @@ import ReactNative, {
   StyleSheet,
   ScrollView,
   Dimensions,
+  ViewPropTypes
 } from "react-native";
 
 import CreditCard from "./CardView";
@@ -47,7 +50,7 @@ export default class FullCreditCardInput extends Component {
 
     labelStyle: Text.propTypes.style,
     inputStyle: Text.propTypes.style,
-    inputContainerStyle: View.propTypes.style,
+    inputContainerStyle: ViewPropTypes.style,
 
     validColor: PropTypes.string,
     invalidColor: PropTypes.string,
